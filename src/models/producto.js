@@ -13,6 +13,23 @@ const schemaProducto = new mongoose.Schema({
     precio:{
         type: Number,
         required: true
+    },
+    descripcion:{
+        type: String,
+        required: [true,'La descripcion es obligatoria']
+    },
+    stock:{
+        type: Number,
+        default: [0, 'el stock por defecto es cero'],
+        min: [0, 'El stock por defecto es cero']
+    },
+    imagen: {
+        type: String,
+        required: [true, 'no existe imagen o ruta de imagen por defecto']
+    },
+    habilitado: {
+        type: Boolean,
+        default: true
     }
 });
 
